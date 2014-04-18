@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :motivators
+
   get 'home/index'
 
   get 'home/about'
