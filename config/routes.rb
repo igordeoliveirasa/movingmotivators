@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   resources :feedbacks
+  
+  # html5mode - angularjs
   get 'dashboard' => "dashboard#index"
+  get 'feedback' => "dashboard#index"
+  # --
+  
+
   get 'dashboard/index'
 
   get 'dashboard/feedback'
