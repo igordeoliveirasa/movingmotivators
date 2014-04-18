@@ -7,4 +7,13 @@
     <button ng-click="save(feedback)">SAVE</button>
   </form>
 
+
+  <hr/>
+
+  #feedbacks recebidos
+  
+  <ul>
+    <li ng-repeat="feedback in feedbacks">{{feedback.description}}</li>
+  </ul>
+
 </div>

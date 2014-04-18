@@ -14,11 +14,14 @@ mmControllers.controller('DashboardCtrl', ['$scope', 'Game', 'Motivator',  funct
 
 controller('FeedbackCtrl', ['$scope', 'Feedback', function($scope, Feedback) {
  
+  $scope.feedbacks = Feedback.query();
+
   $scope.feedback = {};
 
   $scope.save = function(feedback) {
     Feedback.save(feedback, function(result){
       alert('Saved!');
+      $scope.feedbacks = Feedback.query();
     });
   }
 
