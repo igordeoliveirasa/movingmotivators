@@ -11,24 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418113613) do
+ActiveRecord::Schema.define(version: 20140418120323) do
 
-  create_table "game_types", force: true do |t|
+  create_table "game_levels", force: true do |t|
     t.string   "name"
-    t.text     "description"
+    t.integer  "level"
+    t.integer  "game_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "game_levels", ["game_id"], name: "index_game_levels_on_game_id"
 
   create_table "games", force: true do |t|
     t.string   "name"
-    t.text     "description"
-    t.integer  "game_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "games", ["game_type_id"], name: "index_games_on_game_type_id"
 
   create_table "motivators", force: true do |t|
     t.string   "name"
@@ -36,10 +35,24 @@ ActiveRecord::Schema.define(version: 20140418113613) do
     t.datetime "updated_at"
   end
 
+  create_table "user_game_levels", force: true do |t|
+    t.integer  "user_game_id"
+    t.integer  "game_level_id"
+    t.integer  "motivator_id"
+    t.integer  "x"
+    t.integer  "y"
+    t.boolean  "done"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_game_levels", ["game_level_id"], name: "index_user_game_levels_on_game_level_id"
+  add_index "user_game_levels", ["motivator_id"], name: "index_user_game_levels_on_motivator_id"
+  add_index "user_game_levels", ["user_game_id"], name: "index_user_game_levels_on_user_game_id"
+
   create_table "user_games", force: true do |t|
     t.integer  "user_id"
     t.integer  "game_id"
-    t.boolean  "done"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

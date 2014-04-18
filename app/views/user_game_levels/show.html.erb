@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User game:</strong>
+  <%= @user_game_level.user_game %>
+</p>
+
+<p>
+  <strong>Game level:</strong>
+  <%= @user_game_level.game_level %>
+</p>
+
+<p>
+  <strong>Motivator:</strong>
+  <%= @user_game_level.motivator %>
+</p>
+
+<p>
+  <strong>X:</strong>
+  <%= @user_game_level.x %>
+</p>
+
+<p>
+  <strong>Y:</strong>
+  <%= @user_game_level.y %>
+</p>
+
+<p>
+  <strong>Done:</strong>
+  <%= @user_game_level.done %>
+</p>
+
+<%= link_to 'Edit', edit_user_game_level_path(@user_game_level) %> |
+<%= link_to 'Back', user_game_levels_path %>

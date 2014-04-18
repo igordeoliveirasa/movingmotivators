@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  resources :user_game_levels
+
   resources :user_games
 
-  resources :games
+  resources :game_levels
 
-  resources :game_types
+  resources :games
 
   resources :motivators
 

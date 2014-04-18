@@ -3,9 +3,7 @@
 one:
   user_id: 
   game_id: 
-  done: false
 
 two:
   user_id: 
   game_id: 
-  done: false

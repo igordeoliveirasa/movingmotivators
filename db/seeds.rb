@@ -23,13 +23,16 @@ if Motivator.all.length != 10
                 { name: 'status'} ] )
 end
 
-if GameType.all.length != 2
-  GameType.create([{ name: 'sorting', description: ''}, 
-                   { name: 'moving', description: ''}])
+if Game.all.length == 0
+  Game.create([{ name: 'Default'}])
 end
 
 
-if Game.all.length == 0
-  Game.create([{ name: 'sorting', description: '', game_type_id: 1}, 
-               { name: 'moving', description: '', game_type_id: 2}])
+if GameLevel.all.length == 0
+  GameLevel.create([{ name: 'sorting', level: 1, game_id: 1}, 
+               { name: 'moving', level: 1, game_id: 2}])
+end
+
+if UserGame.all.length == 0
+  UserGame.create({ user_id: 1, game_id: 1 })
 end

@@ -2,8 +2,10 @@
 
 one:
   name: MyString
-  description: MyText
+  level: 1
+  game_id: 
 
 two:
   name: MyString
-  description: MyText
+  level: 1
+  game_id: 
