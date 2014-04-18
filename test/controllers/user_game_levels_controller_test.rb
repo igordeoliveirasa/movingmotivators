@@ -18,7 +18,7 @@ class UserGameLevelsControllerTest < ActionController::TestCase
 
   test "should create user_game_level" do
     assert_difference('UserGameLevel.count') do
-      post :create, user_game_level: { done: @user_game_level.done, game_level_id: @user_game_level.game_level_id, motivator_id: @user_game_level.motivator_id, user_game_id: @user_game_level.user_game_id, x: @user_game_level.x, y: @user_game_level.y }
+      post :create, user_game_level: { done: @user_game_level.done, game_level_id: @user_game_level.game_level_id, user_game_id: @user_game_level.user_game_id }
     end
 
     assert_redirected_to user_game_level_path(assigns(:user_game_level))
@@ -35,7 +35,7 @@ class UserGameLevelsControllerTest < ActionController::TestCase
   end
 
   test "should update user_game_level" do
-    patch :update, id: @user_game_level, user_game_level: { done: @user_game_level.done, game_level_id: @user_game_level.game_level_id, motivator_id: @user_game_level.motivator_id, user_game_id: @user_game_level.user_game_id, x: @user_game_level.x, y: @user_game_level.y }
+    patch :update, id: @user_game_level, user_game_level: { done: @user_game_level.done, game_level_id: @user_game_level.game_level_id, user_game_id: @user_game_level.user_game_id }
     assert_redirected_to user_game_level_path(assigns(:user_game_level))
   end
 

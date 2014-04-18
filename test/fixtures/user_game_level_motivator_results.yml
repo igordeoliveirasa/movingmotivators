@@ -3,9 +3,13 @@
 one:
   user_game_id: 
   game_level_id: 
-  done: false
+  motivator_id: 
+  x: 1
+  'y': 1
 
 two:
   user_game_id: 
   game_level_id: 
-  done: false
+  motivator_id: 
+  x: 1
+  'y': 1

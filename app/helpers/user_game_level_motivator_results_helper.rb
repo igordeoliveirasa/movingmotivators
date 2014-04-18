@@ -1,0 +1,2 @@
+module UserGameLevelMotivatorResultsHelper
+end

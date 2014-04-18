@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User game level:</strong>
+  <%= @user_game_level_motivator.user_game_level %>
+</p>
+
+<p>
+  <strong>Motivator:</strong>
+  <%= @user_game_level_motivator.motivator %>
+</p>
+
+<p>
+  <strong>X:</strong>
+  <%= @user_game_level_motivator.x %>
+</p>
+
+<p>
+  <strong>Y:</strong>
+  <%= @user_game_level_motivator.y %>
+</p>
+
+<%= link_to 'Edit', edit_user_game_level_motivator_path(@user_game_level_motivator) %> |
+<%= link_to 'Back', user_game_level_motivators_path %>
