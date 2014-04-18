@@ -5,14 +5,20 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+if Motivator.all.length != 10
+  Motivator.create( [{ name: 'curiosity'}, 
+                { name: 'honor'}, 
+                { name: 'acceptance'}, 
+                { name: 'mastery'}, 
+                { name: 'power'}, 
+                { name: 'freedom'}, 
+                { name: 'relatedness'}, 
+                { name: 'order'}, 
+                { name: 'goal'}, 
+                { name: 'status'} ] )
+end
 
-Motivator.create( [{ name: 'curiosity'}, 
-              { name: 'honor'}, 
-              { name: 'acceptance'}, 
-              { name: 'mastery'}, 
-              { name: 'power'}, 
-              { name: 'freedom'}, 
-              { name: 'relatedness'}, 
-              { name: 'order'}, 
-              { name: 'goal'}, 
-              { name: 'status'} ] )
+if Gametype.all.length != 2
+  Gametype.create([{ name: 'ordering', description: ''}, 
+                   { name: 'moving', description: ''}])
+end

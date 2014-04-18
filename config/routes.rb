@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :gametypes
+
   resources :motivators
 
   get 'home/index'
