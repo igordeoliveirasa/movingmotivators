@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :feedbacks
-
+  get 'dashboard' => "dashboard#index"
   get 'dashboard/index'
 
   get 'dashboard/feedback'
