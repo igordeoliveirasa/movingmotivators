@@ -1,9 +1,9 @@
 'use strict';
 
 
-angular.module('mm.controllers', [])
+var mmControllers = angular.module('mmControllers', []);
 
-.controller('DashboardCtrl', [function() {
+mmControllers.controller('DashboardCtrl', [function() {
 
 
 
