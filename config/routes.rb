@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :feedbacks
+
+  get 'dashboard/index'
+
+  get 'dashboard/feedback'
+
   resources :user_results
 
   resources :user_game_level_motivator_results

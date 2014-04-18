@@ -1,5 +1,7 @@
 rake db:drop
 
+rails g scaffold Feedback user:references description:text
+
 rails g scaffold Motivator name:string
 
 rails g scaffold Game name:string

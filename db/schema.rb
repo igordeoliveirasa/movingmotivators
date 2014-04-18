@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418122455) do
+ActiveRecord::Schema.define(version: 20140418124450) do
+
+  create_table "feedbacks", force: true do |t|
+    t.integer  "user_id"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "feedbacks", ["user_id"], name: "index_feedbacks_on_user_id"
 
   create_table "game_levels", force: true do |t|
     t.string   "name"
