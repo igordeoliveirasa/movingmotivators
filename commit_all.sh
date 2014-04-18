@@ -1,2 +1,2 @@
 #!/bin/bash
-git commit . -m "Message: $@"
+git commit . -m "Message: $*"
