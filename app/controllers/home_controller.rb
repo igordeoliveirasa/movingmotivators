@@ -3,9 +3,9 @@ before_action :authenticate_user!
   def index
   end
 
-  def contact
+  def about
   end
 
-  def about
+  def contact
   end
 end
