@@ -30,7 +30,7 @@ end
 
 if GameLevel.all.length == 0
   GameLevel.create([{ name: 'sorting', level: 1, game_id: 1}, 
-               { name: 'moving', level: 1, game_id: 2}])
+               { name: 'moving', level: 2, game_id: 1}])
 end
 
 if UserGame.all.length == 0
