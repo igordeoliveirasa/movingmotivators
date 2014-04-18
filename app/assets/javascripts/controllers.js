@@ -3,8 +3,9 @@
 
 var mmControllers = angular.module('mmControllers', []);
 
-mmControllers.controller('DashboardCtrl', [function() {
-
+mmControllers.controller('DashboardCtrl', ['$scope', 'Game', function($scope, Game) {
+  
+  $scope.games = Game.query();
 
 
 }]);

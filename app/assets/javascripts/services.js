@@ -2,6 +2,7 @@ var mmServices = angular.module('mmServices', ['ngResource']);
 
 mmServices.factory('Game', ['$resource',
     function($resource){
-      return $resource('games/:id', {}, {
+      return $resource('games/:id.json', {}, {
+        query: {method:'GET', params:{gameId:'games'}, isArray:true}
       });
     }]);
