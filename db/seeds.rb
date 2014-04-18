@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Motivator.create( [{ name: 'curiosity'}, 
+              { name: 'honor'}, 
+              { name: 'acceptance'}, 
+              { name: 'mastery'}, 
+              { name: 'power'}, 
+              { name: 'freedom'}, 
+              { name: 'relatedness'}, 
+              { name: 'order'}, 
+              { name: 'goal'}, 
+              { name: 'status'} ] )
