@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :gametypes
+  resources :user_games
+
+  resources :games
+
+  resources :game_types
 
   resources :motivators
 

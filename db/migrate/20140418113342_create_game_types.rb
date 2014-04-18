@@ -1,6 +1,6 @@
-class CreateGametypes < ActiveRecord::Migration
+class CreateGameTypes < ActiveRecord::Migration
   def change
-    create_table :gametypes do |t|
+    create_table :game_types do |t|
       t.string :name
       t.text :description
 
