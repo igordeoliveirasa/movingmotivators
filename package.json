@@ -1,0 +1,25 @@
+{
+  "name": "movingmotivators",
+  "version": "1.0.0",
+  "description": "movingmotivators ================",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/igordeoliveirasa/movingmotivators"
+  },
+  "author": "",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "23ba5fb19643aa55fbd3ead173cbba4097375711",
+  "devDependencies": {
+    "karma": "~0.12.9",
+    "karma-jasmine": "~0.1.5",
+    "karma-chrome-launcher": "~0.1.3"
+  }
+}
