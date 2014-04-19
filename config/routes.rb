@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :user_game_level_results
+
   resources :feedbacks
   
   # html5mode - angularjs

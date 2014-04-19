@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418124450) do
+ActiveRecord::Schema.define(version: 20140419010556) do
 
   create_table "feedbacks", force: true do |t|
     t.integer  "user_id"
@@ -69,6 +69,18 @@ ActiveRecord::Schema.define(version: 20140418124450) do
 
   add_index "user_game_level_motivators", ["motivator_id"], name: "index_user_game_level_motivators_on_motivator_id"
   add_index "user_game_level_motivators", ["user_game_level_id"], name: "index_user_game_level_motivators_on_user_game_level_id"
+
+  create_table "user_game_level_results", force: true do |t|
+    t.integer  "user_game_level_id"
+    t.integer  "motivator_id"
+    t.integer  "x"
+    t.integer  "y"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_game_level_results", ["motivator_id"], name: "index_user_game_level_results_on_motivator_id"
+  add_index "user_game_level_results", ["user_game_level_id"], name: "index_user_game_level_results_on_user_game_level_id"
 
   create_table "user_game_levels", force: true do |t|
     t.integer  "user_game_id"

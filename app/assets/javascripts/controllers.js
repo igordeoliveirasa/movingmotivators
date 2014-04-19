@@ -3,10 +3,15 @@
 
 var mmControllers = angular.module('mmControllers', []);
 
-mmControllers.controller('DashboardCtrl', ['$scope', 'Game', 'Motivator',  function($scope, Game, Motivator) {
+mmControllers.controller('DashboardCtrl', ['$scope', 'UserGame', 'Motivator',  function($scope, UserGame, Motivator) {
   
-  $scope.games = Game.query();
+  $scope.user_games = UserGame.query();
   $scope.motivators = Motivator.query();
+
+  $scope.isGameDone = function(user_game) {
+    return user_game.game.game_levels.length == user_game.user_game_levels.length;
+  }
+
 
 }]).
 

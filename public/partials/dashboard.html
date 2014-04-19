@@ -2,11 +2,13 @@
 <div ng-controller="DashboardCtrl">
 
   
-#lista de jogos
+#meus jogos
 <ul>
-  <li ng-repeat="game in games">{{game.name}}</li>
+  <div ng-repeat="user_game in user_games">
+    <li>{{user_game.game.name}}</li>
+    Is Game Done:{{isGameDone(user_game)}} 
+  </div>
 </ul>
-
 
 #lista de motivators
 

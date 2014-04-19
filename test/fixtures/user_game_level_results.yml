@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_game_level_id: 
+  motivator_id: 
+  x: 1
+  'y': 1
+
+two:
+  user_game_level_id: 
+  motivator_id: 
+  x: 1
+  'y': 1
