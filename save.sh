@@ -1,1 +1,1 @@
-./addall.sh; ./commitall.sh ; ./pushall.sh
+./addall.sh; ./commitall.sh $*; ./pushall.sh
