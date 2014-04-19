@@ -18,4 +18,23 @@ describe('DashboardCtrl', function(){
     var userGame = { game:{game_levels:[]}, user_game_levels:[]};
     expect(scope.isGameDone(userGame)).toBe(true);
   }));
+  
+  it('should return false once the player have not began', inject(function($controller){    
+    var ctrl = $controller('DashboardCtrl', {$scope:scope, UserGame:UserGame, Motivator:Motivator});
+    var userGame = { game:{game_levels:[{},{}]}, user_game_levels:[]};
+    expect(scope.isGameDone(userGame)).toBe(false);
+  }));
+
+  it('should return false once the player completed one of two', inject(function($controller){    
+    var ctrl = $controller('DashboardCtrl', {$scope:scope, UserGame:UserGame, Motivator:Motivator});
+    var userGame = { game:{game_levels:[{},{}]}, user_game_levels:[{}]};
+    expect(scope.isGameDone(userGame)).toBe(false);
+  }));
+
+  it('should return true once the player completed two of two', inject(function($controller){    
+    var ctrl = $controller('DashboardCtrl', {$scope:scope, UserGame:UserGame, Motivator:Motivator});
+    var userGame = { game:{game_levels:[{},{}]}, user_game_levels:[{}, {}]};
+    expect(scope.isGameDone(userGame)).toBe(true);
+  }));
+
 });
