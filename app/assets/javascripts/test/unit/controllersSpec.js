@@ -1,4 +1,5 @@
 describe('DashboardCtrl', function(){
+  beforeEach(module('mmControllers'));
   it('should return false to the isGameDone', function() {
     var scope = {};
     var UserGame = {};
