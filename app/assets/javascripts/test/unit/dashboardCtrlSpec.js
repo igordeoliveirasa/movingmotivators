@@ -1,5 +1,3 @@
-
-
 describe('DashboardCtrl', function(){
   var scope = {};
   var UserGame = {};

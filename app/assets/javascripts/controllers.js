@@ -24,10 +24,10 @@ controller('FeedbackCtrl', ['$scope', 'Feedback', function($scope, Feedback) {
   $scope.feedback = {};
 
   $scope.save = function(feedback) {
-    Feedback.save(feedback, function(result){
-      alert('Saved!');
+    if (feedback!=null && feedback!={}) {
+      Feedback.save(feedback);
       $scope.feedbacks = Feedback.query();
-    });
+    }
   }
 
 }]);
