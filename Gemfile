@@ -3,8 +3,12 @@ source 'https://rubygems.org'
 gem 'devise'
 
 group :development, :test do
-    gem 'rspec-rails'
+    gem 'rspec-rails', '~> 2.0'
 end
+
+gem 'factory_girl_rails'
+
+
 gem 'simplecov', :require => false, :group => :test
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'

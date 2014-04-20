@@ -1,23 +1,5 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do  
   resources :user_game_level_results
-
-  resources :feedbacks
-  
-  # html5mode - angularjs
-  get 'dashboard' => "dashboard#index"
-  get 'feedback' => "dashboard#index"
-  # --
-  
-
-  get 'dashboard/index'
-
-  get 'dashboard/feedback'
-
-  resources :user_results
-
-  resources :user_game_level_motivator_results
-
-  resources :user_game_level_motivators
 
   resources :user_game_levels
 
@@ -28,6 +10,18 @@ Rails.application.routes.draw do
   resources :games
 
   resources :motivators
+
+  resources :feedbacks
+
+  # html5mode - angularjs
+  get 'dashboard' => "dashboard#index"
+  get 'feedback' => "dashboard#index"
+  # --
+  
+
+  get 'dashboard/index'
+
+  get 'dashboard/feedback'
 
   get 'home/index'
 

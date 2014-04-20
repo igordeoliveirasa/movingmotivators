@@ -69,6 +69,6 @@ class UserGameLevelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_game_level_params
-      params.require(:user_game_level).permit(:user_game_id, :game_level_id, :done)
+      params.require(:user_game_level).permit(:user_game_id, :game_level_id)
     end
 end

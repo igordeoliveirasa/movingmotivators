@@ -1,4 +1,4 @@
 json.array!(@user_game_levels) do |user_game_level|
-  json.extract! user_game_level, :id, :user_game_id, :game_level_id, :done
+  json.extract! user_game_level, :id, :user_game_id, :game_level_id
   json.url user_game_level_url(user_game_level, format: :json)
 end
