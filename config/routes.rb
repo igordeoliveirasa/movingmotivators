@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   get 'dashboard' => "dashboard#index"
   get 'feedback' => "dashboard#index"
   # --
-  
 
   get 'dashboard/index'
 
