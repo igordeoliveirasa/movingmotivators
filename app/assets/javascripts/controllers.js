@@ -29,6 +29,11 @@ mmControllers.controller('DashboardCtrl', ['$scope', 'Game', 'GameLevel', 'UserG
         }
         return ret;
     }
+
+    $scope.getGameFromUserGame = function(user_game) {
+        var games = $scope.getJSONByKeyAndValue($scope.games, "id", user_game.game_id);
+        return games[0];
+    }
 }]).
 
 

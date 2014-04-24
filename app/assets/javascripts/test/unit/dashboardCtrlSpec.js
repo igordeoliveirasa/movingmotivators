@@ -73,10 +73,18 @@ describe('DashboardCtrl', function(){
         expect(scope.isGameCompleted(scope.user_games[1])).toBe(false);
   }));
 
-  it('should return false once the player completed one of two', inject(function($controller){
-      var ctrl = $controller('DashboardCtrl', {$scope:scope, Game:Game, GameLevel:GameLevel, UserGame:UserGame, UserGameLevel:UserGameLevel, UserGameLevelResult:UserGameLevelResult, Motivator:Motivator});
+    it('should return false once the player completed one of two', inject(function($controller){
+        var ctrl = $controller('DashboardCtrl', {$scope:scope, Game:Game, GameLevel:GameLevel, UserGame:UserGame, UserGameLevel:UserGameLevel, UserGameLevelResult:UserGameLevelResult, Motivator:Motivator});
         expect(scope.isGameCompleted(scope.user_games[2])).toBe(false);
-  }));
+    }));
 
+    it('Getting game from user game 1 should return game with name: UserGame1', inject(function($controller){
+        var ctrl = $controller('DashboardCtrl', {$scope:scope, Game:Game, GameLevel:GameLevel, UserGame:UserGame, UserGameLevel:UserGameLevel, UserGameLevelResult:UserGameLevelResult, Motivator:Motivator});
+        expect(scope.getGameFromUserGame(scope.user_games[0]).name).toBe("Game1");
+    }));
 
+    it('Getting game from user game 2 should return game with name: UserGame2', inject(function($controller){
+        var ctrl = $controller('DashboardCtrl', {$scope:scope, Game:Game, GameLevel:GameLevel, UserGame:UserGame, UserGameLevel:UserGameLevel, UserGameLevelResult:UserGameLevelResult, Motivator:Motivator});
+        expect(scope.getGameFromUserGame(scope.user_games[1]).name).toBe("Game2");
+    }));
 });
