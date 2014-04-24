@@ -4,6 +4,7 @@ class CreateGameLevels < ActiveRecord::Migration
       t.string :name
       t.integer :level
       t.references :game, index: true
+      t.text :description
 
       t.timestamps
     end

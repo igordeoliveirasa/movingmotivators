@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Game level:</strong>
+  <%= @game_level_permission.game_level %>
+</p>
+
+<p>
+  <strong>Level permission:</strong>
+  <%= @game_level_permission.level_permission %>
+</p>
+
+<%= link_to 'Edit', edit_game_level_permission_path(@game_level_permission) %> |
+<%= link_to 'Back', game_level_permissions_path %>

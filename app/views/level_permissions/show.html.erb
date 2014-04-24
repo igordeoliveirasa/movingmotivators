@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @level_permission.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @level_permission.description %>
+</p>
+
+<%= link_to 'Edit', edit_level_permission_path(@level_permission) %> |
+<%= link_to 'Back', level_permissions_path %>

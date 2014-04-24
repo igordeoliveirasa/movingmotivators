@@ -23,7 +23,7 @@ describe UserGameLevelsController do
   # This should return the minimal set of attributes required to create a valid
   # UserGameLevel. As you add validations to UserGameLevel, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { attributes_for(:user_game_level) }
+  let(:valid_attributes) { { "user_game" => "" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -106,8 +106,8 @@ describe UserGameLevelsController do
         # specifies that the UserGameLevel created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        UserGameLevel.any_instance.should_receive(:update).with({"user_game_id"=>"1", "game_level_id"=>"1"})
-        put :update, {:id => user_game_level.to_param, :user_game_level => attributes_for(:user_game_level)}, valid_session
+        UserGameLevel.any_instance.should_receive(:update).with({ "user_game" => "" })
+        put :update, {:id => user_game_level.to_param, :user_game_level => { "user_game" => "" }}, valid_session
       end
 
       it "assigns the requested user_game_level as @user_game_level" do

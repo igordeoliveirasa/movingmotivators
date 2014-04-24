@@ -69,6 +69,6 @@ class MotivatorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def motivator_params
-      params.require(:motivator).permit(:name)
+      params.require(:motivator).permit(:name, :description)
     end
 end

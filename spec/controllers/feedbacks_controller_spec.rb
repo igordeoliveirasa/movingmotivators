@@ -23,7 +23,7 @@ describe FeedbacksController do
   # This should return the minimal set of attributes required to create a valid
   # Feedback. As you add validations to Feedback, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { attributes_for(:feedback) }
+  let(:valid_attributes) { { "user" => "" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -106,8 +106,8 @@ describe FeedbacksController do
         # specifies that the Feedback created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Feedback.any_instance.should_receive(:update).with( { "description" => "MyText" }  )
-        put :update, {:id => feedback.to_param, :feedback => attributes_for(:feedback)  }, valid_session
+        Feedback.any_instance.should_receive(:update).with({ "user" => "" })
+        put :update, {:id => feedback.to_param, :feedback => { "user" => "" }}, valid_session
       end
 
       it "assigns the requested feedback as @feedback" do

@@ -1,0 +1,2 @@
+module GameLevelPermissionsHelper
+end

@@ -1,0 +1,27 @@
+<h1>Listing level_permissions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @level_permissions.each do |level_permission| %>
+      <tr>
+        <td><%= level_permission.name %></td>
+        <td><%= level_permission.description %></td>
+        <td><%= link_to 'Show', level_permission %></td>
+        <td><%= link_to 'Edit', edit_level_permission_path(level_permission) %></td>
+        <td><%= link_to 'Destroy', level_permission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Level permission', new_level_permission_path %>

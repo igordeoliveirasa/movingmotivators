@@ -1,4 +1,8 @@
 Rails.application.routes.draw do  
+  resources :game_level_permissions
+
+  resources :level_permissions
+
   resources :user_game_level_results
 
   resources :user_game_levels

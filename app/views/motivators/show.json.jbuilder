@@ -1,1 +1,1 @@
-json.extract! @motivator, :id, :name, :created_at, :updated_at
+json.extract! @motivator, :id, :name, :description, :created_at, :updated_at

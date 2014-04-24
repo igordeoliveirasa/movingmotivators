@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140420181740) do
+ActiveRecord::Schema.define(version: 20140424082037) do
 
   create_table "feedbacks", force: true do |t|
     t.integer  "user_id"
@@ -22,10 +22,21 @@ ActiveRecord::Schema.define(version: 20140420181740) do
 
   add_index "feedbacks", ["user_id"], name: "index_feedbacks_on_user_id"
 
+  create_table "game_level_permissions", force: true do |t|
+    t.integer  "game_level_id"
+    t.integer  "level_permission_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "game_level_permissions", ["game_level_id"], name: "index_game_level_permissions_on_game_level_id"
+  add_index "game_level_permissions", ["level_permission_id"], name: "index_game_level_permissions_on_level_permission_id"
+
   create_table "game_levels", force: true do |t|
     t.string   "name"
     t.integer  "level"
     t.integer  "game_id"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -34,12 +45,21 @@ ActiveRecord::Schema.define(version: 20140420181740) do
 
   create_table "games", force: true do |t|
     t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "level_permissions", force: true do |t|
+    t.string   "name"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "motivators", force: true do |t|
     t.string   "name"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

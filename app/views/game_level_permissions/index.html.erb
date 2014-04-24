@@ -1,0 +1,27 @@
+<h1>Listing game_level_permissions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Game level</th>
+      <th>Level permission</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @game_level_permissions.each do |game_level_permission| %>
+      <tr>
+        <td><%= game_level_permission.game_level %></td>
+        <td><%= game_level_permission.level_permission %></td>
+        <td><%= link_to 'Show', game_level_permission %></td>
+        <td><%= link_to 'Edit', edit_game_level_permission_path(game_level_permission) %></td>
+        <td><%= link_to 'Destroy', game_level_permission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Game level permission', new_game_level_permission_path %>

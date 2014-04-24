@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +13,7 @@
     <% @motivators.each do |motivator| %>
       <tr>
         <td><%= motivator.name %></td>
+        <td><%= motivator.description %></td>
         <td><%= link_to 'Show', motivator %></td>
         <td><%= link_to 'Edit', edit_motivator_path(motivator) %></td>
         <td><%= link_to 'Destroy', motivator, method: :delete, data: { confirm: 'Are you sure?' } %></td>

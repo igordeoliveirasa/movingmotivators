@@ -1,0 +1,25 @@
+<%= form_for(@game_level_permission) do |f| %>
+  <% if @game_level_permission.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@game_level_permission.errors.count, "error") %> prohibited this game_level_permission from being saved:</h2>
+
+      <ul>
+      <% @game_level_permission.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :game_level_id %><br>
+    <%= f.text_field :game_level_id %>
+  </div>
+  <div class="field">
+    <%= f.label :level_permission_id %><br>
+    <%= f.text_field :level_permission_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -23,7 +23,7 @@ describe UserGamesController do
   # This should return the minimal set of attributes required to create a valid
   # UserGame. As you add validations to UserGame, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { attributes_for(:user_game) }
+  let(:valid_attributes) { { "user" => "" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -106,8 +106,8 @@ describe UserGamesController do
         # specifies that the UserGame created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        UserGame.any_instance.should_receive(:update).with( {"user_id"=>"1", "game_id"=>"1"}  )
-        put :update, {:id => user_game.to_param, :user_game => attributes_for(:user_game) }, valid_session
+        UserGame.any_instance.should_receive(:update).with({ "user" => "" })
+        put :update, {:id => user_game.to_param, :user_game => { "user" => "" }}, valid_session
       end
 
       it "assigns the requested user_game as @user_game" do

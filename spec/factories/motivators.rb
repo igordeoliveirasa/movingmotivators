@@ -3,5 +3,6 @@
 FactoryGirl.define do
   factory :motivator do
     name "MyString"
+    description "MyText"
   end
 end

@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :user_game_level do
-    user_game_id 1
-    game_level_id 1
+    user_game nil
+    game_level nil
   end
 end

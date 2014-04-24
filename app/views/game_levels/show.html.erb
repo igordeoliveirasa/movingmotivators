@@ -15,5 +15,10 @@
   <%= @game_level.game %>
 </p>
 
+<p>
+  <strong>Description:</strong>
+  <%= @game_level.description %>
+</p>
+
 <%= link_to 'Edit', edit_game_level_path(@game_level) %> |
 <%= link_to 'Back', game_levels_path %>

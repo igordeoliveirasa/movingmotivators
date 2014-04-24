@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :user_game_level_result do
-    user_game_level_id 1
-    motivator_id 1
+    user_game_level nil
+    motivator nil
     x 1
     y 1
   end

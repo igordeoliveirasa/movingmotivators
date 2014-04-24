@@ -5,5 +5,6 @@ FactoryGirl.define do
     name "MyString"
     level 1
     game nil
+    description "MyText"
   end
 end

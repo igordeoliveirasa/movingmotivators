@@ -23,14 +23,28 @@ if Motivator.all.length != 10
                 { name: 'status'} ] )
 end
 
+
+if LevelPermission.all.length == 0
+  LevelPermission.create([{ name: 'Prioritize Motivators', description: 'you can prioritize the motivators'}])
+  LevelPermission.create([{ name: 'Set As Positive', description: 'you can set each motivator as positive'}])
+  LevelPermission.create([{ name: 'Set As Negative', description: 'you can set each motivator as negative'}])
+end
+
+
 if Game.all.length == 0
-  Game.create([{ name: 'Default'}])
+  Game.create([{ name: 'Default', description: 'thats the description of the game'}])
 end
 
 
 if GameLevel.all.length == 0
-  GameLevel.create([{ name: 'sorting', level: 1, game_id: 1}, 
-               { name: 'moving', level: 2, game_id: 1}])
+  GameLevel.create([{ name: 'Prioritizing Motivators', level: 1, game_id: 1}, 
+               { name: 'Setting Motivators as Positive and/or Negative', level: 2, game_id: 1}])
+end
+
+if GameLevelPermission.all.length == 0
+  GameLevelPermission.create({ game_level_id: 1, level_permission_id: 1 })
+  GameLevelPermission.create({ game_level_id: 2, level_permission_id: 2 })
+  GameLevelPermission.create({ game_level_id: 2, level_permission_id: 3 })
 end
 
 if UserGame.all.length == 0

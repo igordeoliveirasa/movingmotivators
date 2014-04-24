@@ -5,8 +5,9 @@
 #meus jogos
 <ul>
   <div ng-repeat="user_game in user_games">
-    <li>{{user_game.game.name}}</li>
-    Is Game Done:{{isGameDone(user_game)}} 
+      <li>{{getGameFromUserGame(user_game).name}}</li>
+      <li>{{getGameFromUserGame(user_game).description}}</li>
+      <li>Is Game Done:{{isGameCompleted(user_game)}}</li>
   </div>
 </ul>
 

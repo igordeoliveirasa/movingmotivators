@@ -1,0 +1,2 @@
+module LevelPermissionsHelper
+end
