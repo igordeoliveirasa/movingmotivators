@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9672637-a497-4aa2-a3b1-ef4458a82077" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20140424082037_create_user_games.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user_games/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/user_games/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/controllers.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/controllers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/partials/dashboard.html" afterPath="$PROJECT_DIR$/public/partials/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/test/unit/dashboardCtrlSpec.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/test/unit/dashboardCtrlSpec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/views/user_games/edit.html.erb_spec.rb" afterPath="$PROJECT_DIR$/spec/views/user_games/edit.html.erb_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user_games/index.html.erb" afterPath="$PROJECT_DIR$/app/views/user_games/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/views/user_games/index.html.erb_spec.rb" afterPath="$PROJECT_DIR$/spec/views/user_games/index.html.erb_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user_games/index.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/user_games/index.json.jbuilder" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/views/user_games/new.html.erb_spec.rb" afterPath="$PROJECT_DIR$/spec/views/user_games/new.html.erb_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scaffold.sh" afterPath="$PROJECT_DIR$/scaffold.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user_games/show.html.erb" afterPath="$PROJECT_DIR$/app/views/user_games/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/views/user_games/show.html.erb_spec.rb" afterPath="$PROJECT_DIR$/spec/views/user_games/show.html.erb_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user_games/show.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/user_games/show.json.jbuilder" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/factories/user_games.rb" afterPath="$PROJECT_DIR$/spec/factories/user_games.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/user_games_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/user_games_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="movingmotivators.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,21 +38,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllers.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53125" vertical-offset="434" max-vertical-offset="1170">
-              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="434" max-vertical-offset="1170">
+              <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="dashboard.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/partials/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.7" vertical-offset="0" max-vertical-offset="420">
-              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.19313304" vertical-offset="0" max-vertical-offset="699">
+              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -122,9 +104,9 @@
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/services.js" />
-        <option value="$PROJECT_DIR$/public/partials/dashboard.html" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/controllers.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/test/unit/dashboardCtrlSpec.js" />
+        <option value="$PROJECT_DIR$/public/partials/dashboard.html" />
       </list>
     </option>
   </component>
@@ -669,14 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/partials/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7" vertical-offset="0" max-vertical-offset="420">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/test/unit/dashboardCtrlSpec.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.653847" vertical-offset="910" max-vertical-offset="1620">
@@ -687,8 +661,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53125" vertical-offset="434" max-vertical-offset="1170">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="434" max-vertical-offset="1170">
+          <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/partials/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19313304" vertical-offset="0" max-vertical-offset="699">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
           <folding />
         </state>
       </provider>
