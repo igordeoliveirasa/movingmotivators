@@ -24,6 +24,7 @@ module.exports = function(config) {
       'vendor/assets/javascripts/angular-resource.js',
       'vendor/assets/javascripts/angular-route.js',
       'vendor/assets/javascripts/angular-mocks.js',
+      'app/assets/javascripts/controllers_commons.js',
       'app/assets/javascripts/app.js',
       'app/assets/javascripts/controllers.js',
       'app/assets/javascripts/services.js',

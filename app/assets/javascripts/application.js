@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require controllers_commons.js
 //= require angular.js
 //= require angular-route.js
 //= require angular-resource.js

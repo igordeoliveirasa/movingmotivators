@@ -8,6 +8,7 @@ config(["$httpProvider", function($httpProvider){
 
 config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider.when('/dashboard', {templateUrl: 'partials/dashboard.html', controller: 'DashboardCtrl'});
+  $routeProvider.when('/user_game/:user_game_id', {templateUrl: 'partials/user_game.html', controller: 'UserGameCtrl'});
   $routeProvider.when('/feedback', {templateUrl: 'partials/feedback.html', controller: 'FeedbackCtrl'});
 //$routeProvider.otherwise({redirectTo: '/view1'});
   $locationProvider.html5Mode(true);

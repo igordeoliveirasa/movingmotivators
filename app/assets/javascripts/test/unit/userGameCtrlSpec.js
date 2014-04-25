@@ -1,6 +1,7 @@
-describe('DashboardCtrl', function(){
+describe('UserGameCtrl', function(){
     var scope = {};
 
+    var routeParams = {};
     var Motivator = {};
     var LevelPermission = {};
 
@@ -12,6 +13,7 @@ describe('DashboardCtrl', function(){
     var UserGameLevel = {};
     var UserGameLevelResult = {};
 
+
     beforeEach(function(){
     module('mmControllers');
 
@@ -21,11 +23,23 @@ describe('DashboardCtrl', function(){
             {"id":4,"name":"Game4","url":"http://0.0.0.0:3000/games/4.json"},
             {"id":5,"name":"Game5","url":"http://0.0.0.0:3000/games/5.json"}];};
 
+        Game.get = function(game_id) {
+            if (game_id==1) {
+                return {"id": 1, "name": "Game1", "url": "http://0.0.0.0:3000/games/1.json"};
+            }
+        }
+
         UserGame.query = function() {
             return [{"id":1,"user_id":1,"game_id":1,"url":"http://0.0.0.0:3000/user_games/1.json", "completed":true},
                 {"id":2,"user_id":1,"game_id":2,"url":"http://0.0.0.0:3000/user_games/2.json", "completed":false},
                 {"id":3,"user_id":1,"game_id":3,"url":"http://0.0.0.0:3000/user_games/3.json", "completed":false}];
         };
+
+        UserGame.get = function(user_game_id) {
+            if (user_game_id==1) {
+                return {"id": 1, "user_id": 1, "game_id": 1, "completed": false, "url": "http://0.0.0.0:3000/user_games/1.json"};
+            }
+        }
 
         Motivator.query = function(){ return []; };
         LevelPermission.query = function(){ return []; };
@@ -34,7 +48,8 @@ describe('DashboardCtrl', function(){
             {"id":1,"name":"sorting","level":1,"game_id":1,"url":"http://0.0.0.0:3000/game_levels/1.json"},
             {"id":2,"name":"moving","level":2,"game_id":1,"url":"http://0.0.0.0:3000/game_levels/2.json"}];
         };
-
+        /*
+        it cant return a list
         GameLevel.get = function(param) {
             if (param == {game_id:1}) {
                 return [{"id":1,"name":"sorting","level":1,"game_id":1,"url":"http://0.0.0.0:3000/game_levels/1.json"},
@@ -49,7 +64,7 @@ describe('DashboardCtrl', function(){
                     {"id":6,"name":"moving","level":2,"game_id":3,"url":"http://0.0.0.0:3000/game_levels/6.json"}];
             }
         };
-
+        */
         GameLevelPermission.query = function(){ return []; };
 
         UserGameLevel.query = function() { return [{user_game_id:1},{user_game_id:1}]; };
@@ -67,26 +82,17 @@ describe('DashboardCtrl', function(){
         UserGameLevelResult.query = function() { return []; };
   });
 
-    it('Getting game from user game 1 should return game with name: UserGame1', inject(function($controller){
-        var ctrl = $controller('DashboardCtrl', {$scope:scope, Motivator:Motivator, LevelPermission:LevelPermission, Game:Game, GameLevel:GameLevel, GameLevelPermission:GameLevelPermission, UserGame:UserGame, UserGameLevel:UserGameLevel, UserGameLevelResult:UserGameLevelResult});
-        expect(scope.getGameFromUserGame(scope.user_games[0].game_id).name).toBe("Game1");
+    it('should have user_game.id equals to 1', inject(function($controller){
+        routeParams.user_game_id = 1;
+        var ctrl = $controller('UserGameCtrl', {$scope:scope, $routeParams:routeParams, Motivator:Motivator, LevelPermission:LevelPermission, Game:Game, GameLevel:GameLevel, GameLevelPermission:GameLevelPermission, UserGame:UserGame, UserGameLevel:UserGameLevel, UserGameLevelResult:UserGameLevelResult});
+        expect(scope.user_game.id).toBe(1);
     }));
 
-    it('Getting game from user game 2 should return game with name: UserGame2', inject(function($controller){
-        var ctrl = $controller('DashboardCtrl', {$scope:scope, Motivator:Motivator, LevelPermission:LevelPermission, Game:Game, GameLevel:GameLevel, GameLevelPermission:GameLevelPermission, UserGame:UserGame, UserGameLevel:UserGameLevel, UserGameLevelResult:UserGameLevelResult});
-        expect(scope.getGameFromUserGame(scope.user_games[1].game_id).name).toBe("Game2");
-    }));
 
-    it('should return a list of available games', inject(function($controller){
-        var ctrl = $controller('DashboardCtrl', {$scope:scope, Motivator:Motivator, LevelPermission:LevelPermission, Game:Game, GameLevel:GameLevel, GameLevelPermission:GameLevelPermission, UserGame:UserGame, UserGameLevel:UserGameLevel, UserGameLevelResult:UserGameLevelResult});
-        expect(scope.listAvailableGames().length).toBe(2);
-        expect(scope.listAvailableGames()[0].id).toBe(2);
-        expect(scope.listAvailableGames()[1].id).toBe(3);
-    }));
-
-    it('should return a list of available games', inject(function($controller){
-        var ctrl = $controller('DashboardCtrl', {$scope:scope, Motivator:Motivator, LevelPermission:LevelPermission, Game:Game, GameLevel:GameLevel, GameLevelPermission:GameLevelPermission, UserGame:UserGame, UserGameLevel:UserGameLevel, UserGameLevelResult:UserGameLevelResult});
-        expect(scope.listGameLevels(scope.games[0].id).length).toBe(2);
+    it('should return the Game1', inject(function($controller){
+        routeParams.user_game_id = 1;
+        var ctrl = $controller('UserGameCtrl', {$scope:scope, $routeParams:routeParams, Motivator:Motivator, LevelPermission:LevelPermission, Game:Game, GameLevel:GameLevel, GameLevelPermission:GameLevelPermission, UserGame:UserGame, UserGameLevel:UserGameLevel, UserGameLevelResult:UserGameLevelResult});
+        expect(scope.game.name).toBe("Game1");
     }));
 
 });

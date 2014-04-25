@@ -5,18 +5,11 @@
 #meus jogos
 <ul>
   <div ng-repeat="user_game in listAvailableGames()">
-      <li>{{getGameFromUserGame(user_game).name}}</li>
-      <li>{{getGameFromUserGame(user_game).description}}</li>
-      <li><a href="#">começar</a></li>
+      <li>{{getGameFromUserGame(user_game.game_id).name}}</li>
+      <li>{{getGameFromUserGame(user_game.game_id).description}}</li>
+      <li><a href="/game/{{user_game.id}}">começar</a></li>
   </div>
 </ul>
 
-#lista de motivators
-
-<ul>
-  <li ng-repeat="motivator in motivators">{{motivator.name}}</li>
-</ul>
-
-<a href="feedback">leave a feedback</a>
-
+    <a href="feedback">leave a feedback</a>
 </div>

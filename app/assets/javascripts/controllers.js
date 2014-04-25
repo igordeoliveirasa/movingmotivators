@@ -1,6 +1,5 @@
 'use strict';
 
-
 var mmControllers = angular.module('mmControllers', []);
 
 mmControllers.controller('DashboardCtrl', ['$scope', 'Motivator', 'LevelPermission', 'Game', 'GameLevel', 'GameLevelPermission', 'UserGame', 'UserGameLevel', 'UserGameLevelResult', function($scope, Motivator, LevelPermission, Game, GameLevel, GameLevelPermission, UserGame, UserGameLevel, UserGameLevelResult) {
@@ -13,18 +12,8 @@ mmControllers.controller('DashboardCtrl', ['$scope', 'Motivator', 'LevelPermissi
 
     $scope.motivators = Motivator.query();
 
-    $scope.getJSONByKeyAndValue = function(jsons, key, value) {
-        var ret = []
-        for (var i=0; i<jsons.length; i++) {
-            if (jsons[i][key] == value) {
-                ret.push(jsons[i]);
-            }
-        }
-        return ret;
-    }
-
-    $scope.getGameFromUserGame = function(user_game) {
-        var games = $scope.getJSONByKeyAndValue($scope.games, "id", user_game.game_id);
+    $scope.getGameFromUserGame = function(game_id) {
+        var games = getJSONByKeyAndValue($scope.games, "id", game_id);
         return games[0];
     }
 
@@ -37,7 +26,6 @@ mmControllers.controller('DashboardCtrl', ['$scope', 'Motivator', 'LevelPermissi
                 ret.push(game_level);
             }
         }
-
         return ret;
     }
 
@@ -55,6 +43,10 @@ mmControllers.controller('DashboardCtrl', ['$scope', 'Motivator', 'LevelPermissi
 }]).
 
 
+controller('UserGameCtrl', ['$scope', '$routeParams', 'Motivator', 'LevelPermission', 'Game', 'GameLevel', 'GameLevelPermission', 'UserGame', 'UserGameLevel', 'UserGameLevelResult', function($scope, $routeParams, Motivator, LevelPermission, Game, GameLevel, GameLevelPermission, UserGame, UserGameLevel, UserGameLevelResult) {
+    $scope.user_game = UserGame.get($routeParams.user_game_id);
+    $scope.game = Game.get($scope.user_game.game_id);
+}]).
 
 controller('FeedbackCtrl', ['$scope', 'Feedback', function($scope, Feedback) {
  

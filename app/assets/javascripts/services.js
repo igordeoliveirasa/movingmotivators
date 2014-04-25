@@ -1,7 +1,6 @@
 var mmServices = angular.module('mmServices', ['ngResource']);
 
 mmServices.
-
     factory('Feedback', ['$resource',
         function($resource){
           return $resource('feedbacks/:id.json', {}, {
