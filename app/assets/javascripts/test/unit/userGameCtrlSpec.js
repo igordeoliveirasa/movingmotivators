@@ -17,6 +17,20 @@ describe('UserGameCtrl', function(){
     beforeEach(function(){
     module('mmControllers');
 
+        Motivator.query = function() {
+            return [
+                {"id":1, "name":"mot1"},
+                {"id":2, "name":"mot2"},
+                {"id":3, "name":"mot3"},
+                {"id":4, "name":"mot4"},
+                {"id":5, "name":"mot5"},
+                {"id":6, "name":"mot6"},
+                {"id":7, "name":"mot7"},
+                {"id":8, "name":"mot8"},
+                {"id":9, "name":"mot9"},
+                {"id":10, "name":"mot10"}];
+        };
+
         Game.query = function(){ return [{"id":1,"name":"Game1","url":"http://0.0.0.0:3000/games/1.json"},
             {"id":2,"name":"Game2","url":"http://0.0.0.0:3000/games/2.json"},
             {"id":3,"name":"Game3","url":"http://0.0.0.0:3000/games/3.json"},
@@ -27,7 +41,7 @@ describe('UserGameCtrl', function(){
             if (game_id==1) {
                 return {"id": 1, "name": "Game1", "url": "http://0.0.0.0:3000/games/1.json"};
             }
-        }
+        };
 
         UserGame.query = function() {
             return [{"id":1,"user_id":1,"game_id":1,"url":"http://0.0.0.0:3000/user_games/1.json", "completed":true},
@@ -39,9 +53,8 @@ describe('UserGameCtrl', function(){
             if (user_game_id==1) {
                 return {"id": 1, "user_id": 1, "game_id": 1, "completed": false, "url": "http://0.0.0.0:3000/user_games/1.json"};
             }
-        }
+        };
 
-        Motivator.query = function(){ return []; };
         LevelPermission.query = function(){ return []; };
 
         GameLevel.query = function() { return [
@@ -82,17 +95,37 @@ describe('UserGameCtrl', function(){
         UserGameLevelResult.query = function() { return []; };
   });
 
-    it('should have user_game.id equals to 1', inject(function($controller){
+    it('should fill up the motivators', inject(function($controller){
+        routeParams.user_game_id = 1;
+        var ctrl = $controller('UserGameCtrl', {$scope:scope, $routeParams:routeParams, Motivator:Motivator, LevelPermission:LevelPermission, Game:Game, GameLevel:GameLevel, GameLevelPermission:GameLevelPermission, UserGame:UserGame, UserGameLevel:UserGameLevel, UserGameLevelResult:UserGameLevelResult});
+        expect(scope.motivators.length).toBe(10);
+    }));
+
+    it('should fill up the right user_game', inject(function($controller){
         routeParams.user_game_id = 1;
         var ctrl = $controller('UserGameCtrl', {$scope:scope, $routeParams:routeParams, Motivator:Motivator, LevelPermission:LevelPermission, Game:Game, GameLevel:GameLevel, GameLevelPermission:GameLevelPermission, UserGame:UserGame, UserGameLevel:UserGameLevel, UserGameLevelResult:UserGameLevelResult});
         expect(scope.user_game.id).toBe(1);
     }));
 
 
-    it('should return the Game1', inject(function($controller){
+    it('should fill up the right game', inject(function($controller){
         routeParams.user_game_id = 1;
         var ctrl = $controller('UserGameCtrl', {$scope:scope, $routeParams:routeParams, Motivator:Motivator, LevelPermission:LevelPermission, Game:Game, GameLevel:GameLevel, GameLevelPermission:GameLevelPermission, UserGame:UserGame, UserGameLevel:UserGameLevel, UserGameLevelResult:UserGameLevelResult});
         expect(scope.game.name).toBe("Game1");
     }));
 
+    /*
+    keep on doing it later.
+    it('should fill up the right game_level', inject(function($controller){
+        routeParams.user_game_id = 1;
+        var ctrl = $controller('UserGameCtrl', {$scope:scope, $routeParams:routeParams, Motivator:Motivator, LevelPermission:LevelPermission, Game:Game, GameLevel:GameLevel, GameLevelPermission:GameLevelPermission, UserGame:UserGame, UserGameLevel:UserGameLevel, UserGameLevelResult:UserGameLevelResult});
+        expect(scope.game_level.name).toBe("sorting");
+    }));
+
+    it('should fill up the right next_game_level', inject(function($controller){
+        routeParams.user_game_id = 1;
+        var ctrl = $controller('UserGameCtrl', {$scope:scope, $routeParams:routeParams, Motivator:Motivator, LevelPermission:LevelPermission, Game:Game, GameLevel:GameLevel, GameLevelPermission:GameLevelPermission, UserGame:UserGame, UserGameLevel:UserGameLevel, UserGameLevelResult:UserGameLevelResult});
+        expect(scope.next_game_level.name).toBe("moving");
+    }));
+    */
 });

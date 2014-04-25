@@ -44,8 +44,9 @@ mmControllers.controller('DashboardCtrl', ['$scope', 'Motivator', 'LevelPermissi
 
 
 controller('UserGameCtrl', ['$scope', '$routeParams', 'Motivator', 'LevelPermission', 'Game', 'GameLevel', 'GameLevelPermission', 'UserGame', 'UserGameLevel', 'UserGameLevelResult', function($scope, $routeParams, Motivator, LevelPermission, Game, GameLevel, GameLevelPermission, UserGame, UserGameLevel, UserGameLevelResult) {
-    $scope.user_game = UserGame.get($routeParams.user_game_id);
-    $scope.game = Game.get($scope.user_game.game_id);
+        $scope.motivators = Motivator.query();
+        $scope.user_game = UserGame.get($routeParams.user_game_id);
+        $scope.game = Game.get($scope.user_game.game_id);
 }]).
 
 controller('FeedbackCtrl', ['$scope', 'Feedback', function($scope, Feedback) {

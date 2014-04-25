@@ -11,7 +11,7 @@ mmServices.
     factory('GameLevel', ['$resource',
         function($resource){
           return $resource('game_levels/:id.json', {}, {
-            query: {method:'GET', params:{gameLevelId:'game_levels'}, isArray:true}
+              query: {method:'GET', params:{gameLevelId:'game_levels'}, isArray:true}
           });
         }]).
 
