@@ -5,6 +5,7 @@
     <tr>
       <th>User</th>
       <th>Game</th>
+      <th>Completed</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
       <tr>
         <td><%= user_game.user %></td>
         <td><%= user_game.game %></td>
+        <td><%= user_game.completed %></td>
         <td><%= link_to 'Show', user_game %></td>
         <td><%= link_to 'Edit', edit_user_game_path(user_game) %></td>
         <td><%= link_to 'Destroy', user_game, method: :delete, data: { confirm: 'Are you sure?' } %></td>

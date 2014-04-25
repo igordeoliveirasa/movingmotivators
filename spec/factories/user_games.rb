@@ -4,5 +4,6 @@ FactoryGirl.define do
   factory :user_game do
     user nil
     game nil
+    completed false
   end
 end

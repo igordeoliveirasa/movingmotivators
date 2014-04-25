@@ -4,7 +4,8 @@ describe "user_games/edit" do
   before(:each) do
     @user_game = assign(:user_game, stub_model(UserGame,
       :user => nil,
-      :game => nil
+      :game => nil,
+      :completed => false
     ))
   end
 
@@ -15,6 +16,7 @@ describe "user_games/edit" do
     assert_select "form[action=?][method=?]", user_game_path(@user_game), "post" do
       assert_select "input#user_game_user[name=?]", "user_game[user]"
       assert_select "input#user_game_game[name=?]", "user_game[game]"
+      assert_select "input#user_game_completed[name=?]", "user_game[completed]"
     end
   end
 end

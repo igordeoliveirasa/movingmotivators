@@ -4,10 +4,10 @@
   
 #meus jogos
 <ul>
-  <div ng-repeat="user_game in user_games">
+  <div ng-repeat="user_game in listAvailableGames()">
       <li>{{getGameFromUserGame(user_game).name}}</li>
       <li>{{getGameFromUserGame(user_game).description}}</li>
-      <li>Is Game Done:{{isGameCompleted(user_game)}}</li>
+      <li>Is Game Done:{{isUserGameCompleted(user_game)}}</li>
   </div>
 </ul>
 

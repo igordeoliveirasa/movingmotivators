@@ -48,5 +48,5 @@ if GameLevelPermission.all.length == 0
 end
 
 if UserGame.all.length == 0
-  UserGame.create({ user_id: 1, game_id: 1 })
+  UserGame.create({ user_id: 1, game_id: 1, completed:false})
 end

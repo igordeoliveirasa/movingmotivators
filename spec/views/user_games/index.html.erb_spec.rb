@@ -5,11 +5,13 @@ describe "user_games/index" do
     assign(:user_games, [
       stub_model(UserGame,
         :user => nil,
-        :game => nil
+        :game => nil,
+        :completed => false
       ),
       stub_model(UserGame,
         :user => nil,
-        :game => nil
+        :game => nil,
+        :completed => false
       )
     ])
   end
@@ -19,5 +21,6 @@ describe "user_games/index" do
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "tr>td", :text => nil.to_s, :count => 2
     assert_select "tr>td", :text => nil.to_s, :count => 2
+    assert_select "tr>td", :text => false.to_s, :count => 2
   end
 end
